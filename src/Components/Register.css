@@ -1,0 +1,104 @@
+/* Register.css */
+
+/* Centering the Register Box */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin-top: 5%;
+}
+
+/* Register Box Styling */
+.register-container .register-box {
+  background: rgba(238, 238, 241, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 20px #060a27;
+}
+
+/* Title Styling */
+.register-container .register-title {
+  color: #060a27;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.register-container .professor{
+  transform: scaleX(-1);
+}
+/* Input Group Styling */
+.register-container .input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 6, 49, 0.1);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+/* Input Field Styling */
+.register-container .input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #060a27;
+  font-size: 16px;
+  width: 100%;
+  padding: 8px;
+}
+
+/* Autofill Fix */
+.register-container .input-group input:-webkit-autofill,
+.register-container .input-group input:-webkit-autofill:hover, 
+.register-container .input-group input:-webkit-autofill:focus, 
+.register-container .input-group input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(238, 238, 241, 0.8) inset !important;
+  -webkit-text-fill-color: #060a27 !important;
+}
+
+/* Placeholder Color */
+.register-container .input-group input::placeholder {
+  color: #0b113f !important;
+  opacity: 1;
+}
+
+/* Register Button */
+.register-container .register-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #1900ff, #0c0341);
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 6px;
+  color: rgb(252, 243, 243);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.register-container .register-btn:hover {
+  background: linear-gradient(90deg, #0c0341, blue);
+}
+
+/* Existing Account Link */
+.register-container .existing-account {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(23, 8, 65);
+}
+
+.register-container .existing-account a {
+  color: #0f0525;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.register-container .existing-account a:hover {
+  text-decoration: underline;
+}
