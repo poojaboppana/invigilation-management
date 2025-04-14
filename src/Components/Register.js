@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaLock } from "react-icons/fa"; // Added icons
+
 import "./Register.css"; // Link to the CSS file
 import professor from "./professor2.png";
-
+import Navbar from "./Navbar";
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,6 +31,8 @@ const Register = () => {
   };
 
   return (
+    <div>
+    <Navbar />
     <div className="register-container">
        <div>
                 <img src={professor} alt="professor" className="professor" />
@@ -39,7 +41,7 @@ const Register = () => {
         <h2 className="register-title">SIGN UP</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <FaUser className="icon" />
+            
             <input
               type="text"
               placeholder="Username"
@@ -49,7 +51,7 @@ const Register = () => {
             />
           </div>
           <div className="input-group">
-            <FaLock className="icon" />
+        
             <input
               type="password"
               placeholder="Password"
@@ -59,7 +61,7 @@ const Register = () => {
             />
           </div>
           <div className="input-group">
-            <FaLock className="icon" />
+   
             <input
               type="password"
               placeholder="Confirm Password"
@@ -77,6 +79,7 @@ const Register = () => {
           </a>
         </p>
       </div>
+    </div>
     </div>
   );
 };

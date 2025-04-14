@@ -40,7 +40,13 @@
   padding: 10px;
   margin-bottom: 15px;
 }
-
+.register-container .input-group .icon {
+  margin-right: 100%;
+  /* Space between icon and input field */
+  color: #060a27; /* Icon color */
+  font-size: 18px; /* Icon size */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
 /* Input Field Styling */
 .register-container .input-group input {
   border: none;

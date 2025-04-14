@@ -1,14 +1,14 @@
 import React from "react";
 import "./About.css"; // Import the associated CSS file
 import image from "./professor1.png"; // Import the associated image file
-
+import Navbar from "./Navbar"; // Import the Navbar component
 const About = () => {
   return (
+    <div>
+      <Navbar />
     <div className="about-container">
     
-      
-
-      {/* About Us Section */}
+     
       <section className="about-us">
         <div className="content">
           <h1>Helping education institutions manage invigilation efficiently</h1>
@@ -23,6 +23,7 @@ const About = () => {
           <img src={image} alt="Invigilation" />
         </div>
       </section>
+    </div>
     </div>
   );
 };

@@ -1,43 +1,382 @@
-.faculty-container {
-    max-width: 800px;
-    margin: 120px auto;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* General Styles */
+
+
+.faculty-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f7fa;
 }
 
-.faculty-container h2 {
-    text-align: center;
-    color: #333;
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
-.faculty-container .section-box {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid #34495e;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
 
-.faculty-container h3 {
-    color: #007bff;
-    margin-bottom: 10px;
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
 }
 
-.faculty-container ul {
-    list-style-type: none;
-    padding: 0;
+.sidebar-menu li {
+  margin-bottom: 15px;
 }
 
-.faculty-container ul li {
-    background: #e9ecef;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+.sidebar-menu button {
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.faculty-container p {
-    color: #666;
-    font-style: italic;
+.sidebar-menu button:hover {
+  background-color: #34495e;
+}
+
+.sidebar-menu .active button {
+  background-color: #3498db;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+}
+
+/* Header Section */
+.content-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Content Section */
+.content-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.faculty-profile {
+  margin-bottom: 25px;
+}
+
+.faculty-profile h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.profile-details p {
+  margin: 8px 0;
+}
+
+/* Notifications and Schedule */
+.notifications-section, .schedule-section {
+  margin-top: 25px;
+}
+
+.notifications-section h3, .schedule-section h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Notification List */
+.notification-list {
+  list-style: none;
+  padding: 0;
+}
+
+.notification-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.notification-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Schedule Table */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.schedule-table th, .schedule-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.schedule-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.schedule-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.schedule-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Invigilation Section */
+.invigilation-list {
+  list-style: none;
+  padding: 0;
+}
+
+.invigilation-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.invigilation-details {
+  flex: 1;
+}
+
+.invigilation-details strong {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.invigilation-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.invigilation-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.confirm-btn, .swap-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.confirm-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background-color: #27ae60;
+}
+
+.swap-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.swap-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #7f8c8d;
+}
+
+.submit-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+.submit-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Notification Style */
+.notification-list {
+  list-style: none;
+  padding: 0;
+}
+
+.notification-list li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Loading and Error Messages */
+.loading-message, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+/* Past Invigilations */
+.past-invigilations-content {
+  padding: 20px;
+}
+
+.invigilation-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.invigilation-card:hover {
+  transform: translateY(-2px);
+}
+
+.invigilation-details {
+  margin-top: 15px;
+}
+
+.invigilation-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.status-completed {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.details-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.details-btn:hover {
+  background: #5a6268;
+}
+
+.invigilation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.no-data {
+  color: #6c757d;
+  text-align: center;
+  padding: 20px;
+}
+
+.mark-read-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mark-read-btn:hover {
+  background-color: #e74c3c;
 }

@@ -50,7 +50,14 @@
   width: 100%;
   padding: 8px;
 }
-
+.login-container select{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px;
+  color: #060a27;
+  font-size: 16px;
+}
 /* Autofill Fix */
 .login-container .input-group input:-webkit-autofill,
 .login-container .input-group input:-webkit-autofill:hover, 

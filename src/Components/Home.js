@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-
+import Navbar from "./Navbar";
 const Home = () => {
   return (
+    
+    <div>
+      <Navbar />
     <div className="hero">
       <div className="content">
         <h1 className="headline">Invigilation Management System</h1>
@@ -19,6 +22,7 @@ const Home = () => {
       {[...Array(6)].map((_, index) => (
         <div key={index} className={`cube cube-${index + 1}`}></div>
       ))}
+    </div>
     </div>
   );
 };
