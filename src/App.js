@@ -7,7 +7,8 @@ import SwapRequestsPage from "./Components/SwapRequestsPage";
 import PastExamsPage from "./Components/PastExamsPage";
 import About from "./Components/About";
 import Admindashboard from "./Components/Admindashboard";
-import Facultydashboard from "./Components/FacultyDashboard";
+import FacultyDashboard from "./Components/FacultyDashboard";
+
 import AdminPage from "./Components/AdminPage";
 import "./App.css";
 import Contact from "./Components/Contact";
@@ -25,7 +26,7 @@ import Contact from "./Components/Contact";
         <Route path="/register" element={<Register />} />
         <Route path="/admindashboard" element={<Admindashboard />} />
         <Route path="/adminPage" element={<AdminPage />} />
-        <Route path="/facultydashboard" element={<Facultydashboard />} />
+        <Route path="/facultydashboard" element={<FacultyDashboard />} />
         <Route path="/home" element={<Home />} />
         <Route path="/logout" element={<Login />} />
         <Route path="/admin/swap-requests" element={<SwapRequestsPage />} />

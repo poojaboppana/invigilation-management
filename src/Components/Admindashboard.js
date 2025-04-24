@@ -33,6 +33,7 @@ const AdminDashboard = () => {
     const fetchFacultyData = async () => {
       try {
         const response = await axios.get("http://localhost:5000/api/faculty");
+        
         setFacultyList(response.data);
       } catch (error) {
         console.error("Error fetching faculty data:", error);
@@ -49,6 +50,7 @@ const AdminDashboard = () => {
         const response = await axios.get(
           "http://localhost:5000/api/swap-requests"
         );
+        
         setSwapRequests(response.data);
       } catch (error) {
         console.error("Error fetching swap requests:", error);
@@ -65,8 +67,9 @@ const AdminDashboard = () => {
     const fetchPastExams = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/exams/completed"
+         " http://localhost:5000/api/exams/completed"
         );
+        
         setPastExams(response.data);
       } catch (error) {
         console.error("Error fetching past exams:", error);
@@ -212,7 +215,7 @@ const AdminDashboard = () => {
     try {
       setIsSubmitting(true);
       const response = await axios.post(
-        "http://localhost:5000/api/exams/generate-schedule",
+       " http://localhost:5000/api/exams/generate-schedule",
         {
           slotDetails,
           facultyPerSection: parseInt(slotDetails[0].facultyPerSection, 10),
@@ -285,10 +288,18 @@ const AdminDashboard = () => {
         })),
       };
 
-      const response = await axios.post("http://localhost:5000/api/exams", examData);
-      await axios.post("http://localhost:5000/api/notify-faculty", {
-        examId: response.data._id,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/exams", 
+        examData
+      );
+      
+      await axios.post(
+        "http://localhost:5000/api/notify-faculty", 
+        {
+          examId: response.data._id,
+        }
+      );
+      
 
       alert("Exam allotment confirmed and faculty notified!");
       resetAssignment();
@@ -309,6 +320,9 @@ const AdminDashboard = () => {
 
     try {
       await axios.post("http://localhost:5000/api/exams/manual-assignment", {
+        // your request data
+      
+      
         examId: manualAssignmentData.examId || "temp-id",
         slotNumber: manualAssignmentData.slotNumber,
         sectionNumber: manualAssignmentData.sectionNumber,
@@ -349,7 +363,7 @@ const AdminDashboard = () => {
   const markExamsAsCompleted = async () => {
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/exams/mark-completed"
+       "http://localhost:5000/api/exams/mark-completed"
       );
       alert(response.data.message);
       const updatedExams = await axios.get(
